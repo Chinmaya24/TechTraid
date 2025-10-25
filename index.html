@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Traid: Innovation Meets Competition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* For smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Custom Icon Animation */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      /* Animated Starfield Background */
+      body {
+        background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+        height: 100vh;
+        overflow-x: hidden; /* Prevent horizontal scrollbars, allow vertical */
+      }
+
+      @keyframes animStar {
+        from {
+          transform: translateY(0px);
+        }
+        to {
+          transform: translateY(-2000px);
+        }
+      }
+
+      .stars, .stars2, .stars3 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        background: transparent;
+      }
+      
+      .stars::after, .stars2::after, .stars3::after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        background: transparent;
+      }
+
+      /* Small Stars */
+      .stars {
+        width: 1px;
+        height: 1px;
+        box-shadow: 139px 235px #FFF, 1502px 132px #FFF, 185px 1239px #FFF, 1756px 1433px #FFF, 1530px 1761px #FFF, 1801px 1868px #FFF, 1196px 174px #FFF, 420px 1361px #FFF, 1731px 1972px #FFF, 1481px 179px #FFF, 1269px 1351px #FFF, 1941px 1713px #FFF, 188px 1290px #FFF, 1916px 571px #FFF, 1007px 1146px #FFF, 497px 443px #FFF, 128px 1769px #FFF, 1883px 1827px #FFF, 5px 695px #FFF, 969px 251px #FFF, 1373px 1709px #FFF, 888px 1475px #FFF, 946px 1324px #FFF, 1222px 1869px #FFF, 1696px 1319px #FFF, 1379px 1190px #FFF, 1785px 1403px #FFF, 1547px 470px #FFF, 1836px 379px #FFF, 1341px 406px #FFF, 1173px 1775px #FFF, 1211px 421px #FFF, 494px 1762px #FFF, 715px 1945px #FFF, 1272px 1845px #FFF, 1335px 129px #FFF, 1735px 956px #FFF, 132px 1445px #FFF, 642px 1307px #FFF, 1234px 1143px #FFF, 140px 1118px #FFF, 1827px 1304px #FFF, 874px 140px #FFF, 1237px 441px #FFF, 1152px 902px #FFF, 444px 165px #FFF, 144px 140px #FFF, 1701px 1968px #FFF, 1935px 822px #FFF, 1391px 662px #FFF, 1904px 572px #FFF, 1667px 1010px #FFF, 1504px 1968px #FFF, 545px 338px #FFF, 563px 1300px #FFF, 1673px 1059px #FFF, 1319px 584px #FFF, 1819px 748px #FFF, 1488px 1936px #FFF, 96px 658px #FFF, 1008px 671px #FFF, 1844px 1069px #FFF, 945px 1802px #FFF, 543px 439px #FFF, 1417px 1563px #FFF, 24px 728px #FFF, 1261px 194px #FFF, 818px 469px #FFF, 1311px 1999px #FFF, 1301px 813px #FFF, 725px 38px #FFF, 1121px 1888px #FFF, 1530px 1279px #FFF, 1317px 809px #FFF, 1784px 143px #FFF, 1422px 1861px #FFF, 550px 105px #FFF, 1421px 1332px #FFF, 1215px 144px #FFF, 893px 1308px #FFF, 1146px 162px #FFF, 104px 175px #FFF, 1290px 1902px #FFF, 775px 1195px #FFF, 1570px 1019px #FFF, 1581px 1895px #FFF, 788px 1560px #FFF, 333px 1489px #FFF, 321px 404px #FFF, 1432px 1358px #FFF, 138px 1238px #FFF, 1729px 1368px #FFF, 802px 1515px #FFF, 1475px 828px #FFF, 1756px 632px #FFF, 1269px 922px #FFF, 1996px 1484px #FFF;
+        animation: animStar 50s linear infinite;
+      }
+      .stars::after {
+        width: 1px;
+        height: 1px;
+        box-shadow: 139px 235px #FFF, 1502px 132px #FFF, 185px 1239px #FFF, 1756px 1433px #FFF, 1530px 1761px #FFF, 1801px 1868px #FFF, 1196px 174px #FFF, 420px 1361px #FFF, 1731px 1972px #FFF, 1481px 179px #FFF, 1269px 1351px #FFF, 1941px 1713px #FFF, 188px 1290px #FFF, 1916px 571px #FFF, 1007px 1146px #FFF, 497px 443px #FFF, 128px 1769px #FFF, 1883px 1827px #FFF, 5px 695px #FFF, 969px 251px #FFF, 1373px 1709px #FFF, 888px 1475px #FFF, 946px 1324px #FFF, 1222px 1869px #FFF, 1696px 1319px #FFF, 1379px 1190px #FFF, 1785px 1403px #FFF, 1547px 470px #FFF, 1836px 379px #FFF, 1341px 406px #FFF, 1173px 1775px #FFF, 1211px 421px #FFF, 494px 1762px #FFF, 715px 1945px #FFF, 1272px 1845px #FFF, 1335px 129px #FFF, 1735px 956px #FFF, 132px 1445px #FFF, 642px 1307px #FFF, 1234px 1143px #FFF, 140px 1118px #FFF, 1827px 1304px #FFF, 874px 140px #FFF, 1237px 441px #FFF, 1152px 902px #FFF, 444px 165px #FFF, 144px 140px #FFF, 1701px 1968px #FFF, 1935px 822px #FFF, 1391px 662px #FFF, 1904px 572px #FFF, 1667px 1010px #FFF, 1504px 1968px #FFF, 545px 338px #FFF, 563px 1300px #FFF, 1673px 1059px #FFF, 1319px 584px #FFF, 1819px 748px #FFF, 1488px 1936px #FFF, 96px 658px #FFF, 1008px 671px #FFF, 1844px 1069px #FFF, 945px 1802px #FFF, 543px 439px #FFF, 1417px 1563px #FFF, 24px 728px #FFF, 1261px 194px #FFF, 818px 469px #FFF, 1311px 1999px #FFF, 1301px 813px #FFF, 725px 38px #FFF, 1121px 1888px #FFF, 1530px 1279px #FFF, 1317px 809px #FFF, 1784px 143px #FFF, 1422px 1861px #FFF, 550px 105px #FFF, 1421px 1332px #FFF, 1215px 144px #FFF, 893px 1308px #FFF, 1146px 162px #FFF, 104px 175px #FFF, 1290px 1902px #FFF, 775px 1195px #FFF, 1570px 1019px #FFF, 1581px 1895px #FFF, 788px 1560px #FFF, 333px 1489px #FFF, 321px 404px #FFF, 1432px 1358px #FFF, 138px 1238px #FFF, 1729px 1368px #FFF, 802px 1515px #FFF, 1475px 828px #FFF, 1756px 632px #FFF, 1269px 922px #FFF, 1996px 1484px #FFF;
+      }
+
+      /* Medium Stars */
+      .stars2 {
+        width: 2px;
+        height: 2px;
+        box-shadow: 305px 1272px #FFF, 1461px 1205px #FFF, 831px 644px #FFF, 526px 528px #FFF, 959px 1735px #FFF, 1100px 338px #FFF, 620px 1109px #FFF, 93px 421px #FFF, 103px 1604px #FFF, 158px 170px #FFF, 1726px 173px #FFF, 129px 248px #FFF, 915px 1285px #FFF, 1007px 100px #FFF, 1351px 1832px #FFF, 1891px 1373px #FFF, 1104px 1892px #FFF, 314px 1022px #FFF, 1282px 554px #FFF, 290px 1928px #FFF, 1839px 490px #FFF, 1718px 1500px #FFF, 1328px 175px #FFF, 1373px 1515px #FFF, 303px 1184px #FFF, 1599px 1696px #FFF, 1380px 1636px #FFF, 1968px 179px #FFF, 1957px 1492px #FFF, 107px 1608px #FFF, 1300px 815px #FFF, 1905px 1872px #FFF, 848px 1121px #FFF, 1133px 933px #FFF, 1042px 815px #FFF, 1060px 480px #FFF, 1686px 1904px #FFF, 109px 1991px #FFF, 1922px 1622px #FFF, 62px 255px #FFF;
+        animation: animStar 100s linear infinite;
+      }
+      .stars2::after {
+        width: 2px;
+        height: 2px;
+        box-shadow: 305px 1272px #FFF, 1461px 1205px #FFF, 831px 644px #FFF, 526px 528px #FFF, 959px 1735px #FFF, 1100px 338px #FFF, 620px 1109px #FFF, 93px 421px #FFF, 103px 1604px #FFF, 158px 170px #FFF, 1726px 173px #FFF, 129px 248px #FFF, 915px 1285px #FFF, 1007px 100px #FFF, 1351px 1832px #FFF, 1891px 1373px #FFF, 1104px 1892px #FFF, 314px 1022px #FFF, 1282px 554px #FFF, 290px 1928px #FFF, 1839px 490px #FFF, 1718px 1500px #FFF, 1328px 175px #FFF, 1373px 1515px #FFF, 303px 1184px #FFF, 1599px 1696px #FFF, 1380px 1636px #FFF, 1968px 179px #FFF, 1957px 1492px #FFF, 107px 1608px #FFF, 1300px 815px #FFF, 1905px 1872px #FFF, 848px 1121px #FFF, 1133px 933px #FFF, 1042px 815px #FFF, 1060px 480px #FFF, 1686px 1904px #FFF, 109px 1991px #FFF, 1922px 1622px #FFF, 62px 255px #FFF;
+      }
+
+      /* Large Stars */
+      .stars3 {
+        width: 3px;
+        height: 3px;
+        box-shadow: 369px 91px #FFF, 411px 1335px #FFF, 174px 1630px #FFF, 1430px 1953px #FFF, 1938px 1130px #FFF, 1059px 1563px #FFF, 1032px 142px #FFF, 1095px 1279px #FFF, 764px 338px #FFF, 143px 1419px #FFF, 483px 1310px #FFF, 1819px 1789px #FFF, 239px 577px #FFF, 1694px 505px #FFF, 95px 941px #FFF;
+        animation: animStar 150s linear infinite;
+      }
+      .stars3::after {
+        width: 3px;
+        height: 3px;
+        box-shadow: 369px 91px #FFF, 411px 1335px #FFF, 174px 1630px #FFF, 1430px 1953px #FFF, 1938px 1130px #FFF, 1059px 1563px #FFF, 1032px 142px #FFF, 1095px 1279px #FFF, 764px 338px #FFF, 143px 1419px #FFF, 483px 1310px #FFF, 1819px 1789px #FFF, 239px 577px #FFF, 1694px 505px #FFF, 95px 941px #FFF;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="text-white">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
